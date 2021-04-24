@@ -30,10 +30,10 @@ class SuperadminController extends Controller
 
     public function index()
     {
-        $students_count = DB::table('users')->orderBy('created_at', 'DESC')->where('admin_id',Auth::user()->id)
+        $students_count = DB::table('users')->orderBy('created_at', 'DESC')
                        ->get()->count();
 
-        $exam_count = DB::table('exam')->orderBy('created_at', 'DESC')->where('admin_id',Auth::user()->id)
+        $exam_count = DB::table('exam')->orderBy('created_at', 'DESC')
                           ->get()->count();              
         return view('superadmin',compact('students_count', 'exam_count'));
     }
@@ -51,7 +51,7 @@ class SuperadminController extends Controller
       }
       public function showstudent()
     {
-        $students = DB::table('users')->orderBy('created_at', 'DESC')->where('admin_id',Auth::user()->id)
+        $students = DB::table('users')->orderBy('created_at', 'DESC')
      //               ->limit(50)
                     ->get();
         $category = category::all();
@@ -109,7 +109,7 @@ class SuperadminController extends Controller
     {
       //  $student = Student::all()->where('admin_id', Auth::user()->id);
       //  dump(Student::all());
-        $exam = DB::table('exam')->orderBy('created_at', 'DESC')->where('admin_id',Auth::user()->id)
+        $exam = DB::table('exam')->orderBy('created_at', 'DESC')
     //->limit(50)
        ->get();
        // console($student);
@@ -284,7 +284,7 @@ class SuperadminController extends Controller
             $category = category::all();
     
     
-            $exam_publish = DB::table('exam')->orderBy('created_at', 'DESC')->where(['admin_id'=>Auth::user()->id,'examcode' =>$id])
+            $exam_publish = DB::table('exam')->orderBy('created_at', 'DESC')->where('examcode',$id)
             //->limit(50)
                ->get();  
         //    dump($exam_publish);
@@ -408,7 +408,7 @@ class SuperadminController extends Controller
         $exam->save();
     }
     public function StudentResults(){
-        $result = DB::table('exam')->where('admin_id',Auth::user()->id)
+        $result = DB::table('exam')
         ->get();
 
         $category = DB::table('category')
