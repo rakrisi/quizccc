@@ -461,11 +461,11 @@ class AdminController extends Controller
     }
 
     public function Logout(){
-        if(Auth::guard('superadmin')->check()) // this means that the admin was logged in.
-        {
-            Auth::guard('superadmin')->logout();
-            return redirect()->route('superadmin.login');
-        }
+        // if(Auth::guard('superadmin')->check()) // this means that the superadmin was logged in.
+        // {
+        //     Auth::guard('superadmin')->logout();
+        //     return redirect()->route('superadmin.login');
+        // }
         auth()->logout();
     
         session()->flash('message', 'Some goodbye message');

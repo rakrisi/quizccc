@@ -452,13 +452,13 @@ $(function() {
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('logout') }}"
+                                        <a href="{{ route('logout1') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ route('logout1') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
@@ -578,13 +578,13 @@ $(function() {
                                     </li>
                                     <li>
                                        
-                                        <a href="/logout"
+                                        <a href="/logout1"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form1').submit();">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
 
-                                        <form id="logout-form1" action="/logout" method="POST" style="display: none;">
+                                        <form id="logout-form1" action="/logout1" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form> 
                                     </li>
@@ -613,13 +613,13 @@ $(function() {
                                         <li class="more-details">
                                          <!--   <a href="#"><i class="ti-user"></i>View Profile</a>
                                             <a href="#!"><i class="ti-settings"></i>Settings</a> -->
-                                            <a href="/logout"
+                                            <a href="/logout1"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form2').submit();">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
 
-                                        <form id="logout-form2" action="/logout" method="POST" style="display: none;">
+                                        <form id="logout-form2" action="/logout1" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form> 
                                         </li>
@@ -630,22 +630,28 @@ $(function() {
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="/admin">
+                                    <a href="/superadmin">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>H</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Home</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                               
                                 <li class="pcoded-hasmenu">
-                                    <a href="/liststudent">
+                                    <a href="/listadmins">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Admins</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/liststudents">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Students</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="pcoded-hasmenu">
-                                    <a href="/Exams">
+                                    <a href="/Examadd">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Exams</span>
                                         <span class="pcoded-mcaret"></span>
@@ -663,7 +669,7 @@ $(function() {
                                     </ul> -->
                                 </li>
                                 <li class="pcoded-hasmenu">
-                                    <a href="/StudentResult">
+                                    <a href="/StudentResults">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Results</span>
                                         <span class="pcoded-mcaret"></span>
@@ -673,14 +679,14 @@ $(function() {
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms"> Add New Exam &amp; Student</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
-                                    <a href="/liststudent">
+                                    <a href="/liststudents">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Add New Student</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/Exams" >
+                                    <a href="/Examadd" >
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Add New Exam</span>
                                         <span class="pcoded-mcaret"></span>
@@ -692,14 +698,14 @@ $(function() {
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Notes &amp; Study Material</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
-                                    <a href="/comingsoon">
+                                    <a href="/comingsoonadd">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Quick Revision</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/comingsoon">
+                                    <a href="/comingsoonadd">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Study Material</span>
                                         <span class="pcoded-mcaret"></span>
@@ -712,12 +718,12 @@ $(function() {
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Send Message &amp; Notification</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu ">
-                                    <a href="/comingsoon">
+                                    <a href="/comingsoonadd">
                                         <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Mobile Message</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                    <a href="/comingsoon">
+                                    <a href="/comingsoonadd">
                                         <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">App Quick Notification</span>
                                         <span class="pcoded-mcaret"></span>
